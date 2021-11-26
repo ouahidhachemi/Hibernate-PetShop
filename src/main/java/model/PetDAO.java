@@ -33,6 +33,19 @@ public class PetDAO {
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
+        Long id = 1L;
+
+        while (this.showPet(id) != null) {
+            System.out.println(this.showPet(id++));
+        }
+
+    }
+
+    public Cat showPet(Long id) {
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        return entityManager.find(Cat.class, id);
+
     }
 
 }
