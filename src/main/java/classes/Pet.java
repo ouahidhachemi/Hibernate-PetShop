@@ -1,17 +1,23 @@
 package classes;
 
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class Pet {
 
-    private String name;
-    private int age;
-    private String breed;
+    protected String name;
+    protected int age;
+    protected char sex;
+    protected String breed;
+
 
     public Pet() {
     }
 
-    public Pet(String name, int age, String breed) {
+    public Pet(String name, int age, char sex, String breed) {
         this.name = name;
         this.age = age;
+        this.sex = sex;
         this.breed = breed;
     }
 
@@ -29,6 +35,14 @@ public abstract class Pet {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public char getSex() {
+        return sex;
+    }
+
+    public void setSex(char sex) {
+        this.sex = sex;
     }
 
     public String getBreed() {

@@ -1,18 +1,23 @@
 import entities.Cat;
-import model.PetDAO;
+import entities.Dog;
+import model.CatDAO;
+import model.DogDAO;
 
 public class Main {
     public static void main(String[] args) {
-        PetDAO catDAO = new PetDAO();
+        CatDAO catDAO = new CatDAO();
+        DogDAO dogDAO = new DogDAO();
 
         Cat cat = new Cat("Rikcy", 4, 'M', "Siamois");
 
-        catDAO.createPetDAO(cat);
+        Dog dog = new Dog("Koucky", 5, 'M', "Caniche");
 
-        Long id = 1L;
+        catDAO.createCatDAO(cat);
 
-        while (!(catDAO.showPet(id)).equals(null)) {
-            System.out.println(catDAO.showPet(id++));
-        }
+        dogDAO.createDogDAO(dog);
+
+        catDAO.showCat();
+
+        dogDAO.showDog();
     }
 }

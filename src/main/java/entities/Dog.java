@@ -5,15 +5,15 @@ import classes.Pet;
 import javax.persistence.*;
 
 @Entity
-public class Cat extends Pet {
+public class Dog extends Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "cat_id", updatable =false, nullable = false)
     private Long id;
 
-    public Cat() {}
+    public Dog() {}
 
-    public Cat(String name, int age, char sex, String breed) {
+    public Dog(String name, int age, char sex, String breed) {
         super(name, age, sex, breed);
     }
 
@@ -23,6 +23,6 @@ public class Cat extends Pet {
 
     @Override
     public String toString() {
-        return "Cat{id=%d, name='%s', age=%d, sex=%s, breed='%s'}".formatted(id, super.name, super.age, super.sex, super.breed);
+        return "Dog{id=%d, name='%s', age=%d, sex=%s, breed='%s'}".formatted(id, super.name, super.age, super.sex, super.breed);
     }
 }

@@ -1,11 +1,6 @@
 import entities.Cat;
-import model.PetDAO;
-import org.junit.jupiter.api.BeforeAll;
+import model.CatDAO;
 import org.junit.jupiter.api.Test;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 public class TestDBConnexion {
 /**
@@ -22,13 +17,12 @@ public class TestDBConnexion {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
          */
 
-        PetDAO catDAO = new PetDAO();
+        CatDAO catDAO = new CatDAO();
 
         Cat cat = new Cat("Rikcy", 4, 'M', "Siamois");
 
-        catDAO.createPetDAO(cat);
-
-        System.out.println(catDAO.showPet(2L));
+        catDAO.createCatDAO(cat);
+        //System.out.println(catDAO.showPet());
 
     }
 
